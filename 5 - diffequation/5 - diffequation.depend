@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1591974002 source:c:\users\ерэџ\desktop\3ъ\vychi\6 - diffequation\tridiag_matrix_method.cpp
+	"tridiag_matrix_method.h"
+	<cmath>
+	<iostream>
+
+1591973265 c:\users\ерэџ\desktop\3ъ\vychi\6 - diffequation\tridiag_matrix_method.h
+
+1591973798 source:c:\users\ерэџ\desktop\3ъ\vychi\6 - diffequation\main.cpp
+	<iostream>
+	"tridiag_matrix_method.h"
+	<cmath>
+
+1591974094 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\5 - diffequation\main.cpp
+	<iostream>
+	"tridiag_matrix_method.h"
+	<cmath>
+
+1591973265 c:\users\ерэџ\desktop\3ъ\vychi\sem6\5 - diffequation\tridiag_matrix_method.h
+
+1591974002 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\5 - diffequation\tridiag_matrix_method.cpp
+	"tridiag_matrix_method.h"
+	<cmath>
+	<iostream>
+

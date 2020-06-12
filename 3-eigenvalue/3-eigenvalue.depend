@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1591915628 source:c:\users\ерэџ\desktop\3ъ\vychi\3-eigenvalue\main.cpp
+	<iostream>
+	"eigenvalues.h"
+
+1591915628 c:\users\ерэџ\desktop\3ъ\vychi\3-eigenvalue\eigenvalues.h
+
+1591917284 source:c:\users\ерэџ\desktop\3ъ\vychi\3-eigenvalue\eigenvalues.cpp
+	<iostream>
+	<cmath>
+

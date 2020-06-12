@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1591922734 source:c:\users\ерэџ\desktop\3ъ\vychi\4-fredholm\main.cpp
+	<iostream>
+	<cmath>
+	"fredholm.h"
+
+1591922734 c:\users\ерэџ\desktop\3ъ\vychi\4-fredholm\fredholm.h
+
+1591923324 source:c:\users\ерэџ\desktop\3ъ\vychi\4-fredholm\fredholm.cpp
+	"fredholm.h"
+	<cmath>
+	<iostream>
+
+1592003067 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\4-fredholm\main.cpp
+	<iostream>
+	<cmath>
+	"fredholm.h"
+
+1591924137 c:\users\ерэџ\desktop\3ъ\vychi\sem6\4-fredholm\fredholm.h
+
