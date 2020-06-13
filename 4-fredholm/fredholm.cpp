@@ -1,6 +1,8 @@
 #include "fredholm.h"
 #include <cmath>
 #include <iostream>
+#include<vector>
+#define accuracy 0.001
 
 using namespace std;
 
@@ -157,36 +159,91 @@ void degenerate_kernel() {
 
 }
 
+void swap_lines_vector (vector<vector<double> > matrix, int first, int second, int n) {
+    for (int i = 0; i <= n; i++)
+        swap (matrix[first][i], matrix[second][i]);
+}
+
+void divide_line_vector (vector<vector<double> > matrix, int j, double x, int n) {
+    for (int i = 0; i <= n; i++)
+        matrix[j][i] /= x;
+}
+void sub_lines_vector (vector<vector<double> > matrix, int a, int b, double k , int n) {
+    for (int i = 0; i <= n; i++)
+        matrix[a][i] -= matrix[b][i] * k;
+}
+void copy_array(double a1[3], double a2[3]) {
+    for (int i = 0; i < 3; i++)
+        a2[i] = a1[i]; }
+
+vector<double> hauss (vector<vector<double> > matrix, int n) {
+
+    for (int i = 0; i < n; i++) {
+        if (matrix[i][i] == 0) {
+            for (int j = i; j < n; j++) {
+                if (matrix[j][i] != 0) swap_lines_vector(matrix, i, j, n);
+            }
+        }
+        divide_line_vector(matrix, i, matrix[i][i], n);
+        for (int j = i; j < n; j++)
+            sub_lines_vector(matrix, j, i, matrix[i][j], n);
+    }
+
+
+    vector<double> answer(n);
+    for (int i = n - 1; i >= 0; i--) {
+        answer[i] = matrix[i][n+1];
+        for (int j = i + 1; j < n; j++)
+            answer[i] -= matrix[i][j] * answer[j];
+    }
+    return answer;
+
+}
+
+
+
 
 void mechanic_quadrature() {
-    double Ak;
-    double D[4][5];
-    double result[3];
-    Ak = 1 / 4;
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            D[i][j] = -Ak * H(i/4 + 1/8, j/4 + 1/8);
-            }
-        D[i][i] += 1;
-        D[i][5] = f(i/4 + 1/8);
+    int n = 2;
+    double Ak = 1.0 / n;
 
-    }
-    double* z = jordan_4x4(D);
-    result[0] = f(0);
-    for (int i = 0; i < 4; i++) {
-        result[0] += Ak * H(0, i/4 + 1/8) * z[i];
-    }
-    result[1] = f(1/2);
-    for (int i = 0; i < 4; i++) {
-        result[1] += Ak * H(1/2, i/4 + 1/8) * z[i];
-    }
-    result[2] = f(1);
-    for (int i = 0; i < 4; i++) {
-        result[2] += Ak * H(1, i/4 + 1/8) * z[i];
-    }
+    double result_old[3], result_new[3] = {0, 0, 0};
+
+    do {
+        vector<vector<double> > D(n, vector<double>(n + 1));
+        copy_array(result_old, result_new);
+        //cout << "u\t" << result_new[0] << "\t" << result_new[1] <<"\t" << result_new[2] <<endl;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                D[i][j] = -Ak * H((double)i/n + (double) 1/(2 * n), (double)j/n + (double) 1/(2 * n));
+                }
+            D[i][i] += 1;
+            D[i][n] = f((double)i/n + (double) 1/(2 * n));
+
+        }
+
+        vector <double> z = hauss(D, n);
+        result_new[0] = f(0);
+        for (int i = 0; i < n; i++) {
+            result_new[0] += Ak * H(0, (double)i/n + (double) 1/(2 * n)) * z[i];
+        }
+        result_new[1] = f(1/2);
+        for (int i = 0; i < n; i++) {
+            result_new[1] += Ak * H(1/2.0, (double)i/n + (double) 1/(2 * n)) * z[i];
+        }
+        result_new[2] = f(1);
+        for (int i = 0; i < n; i++) {
+            result_new[2] += Ak * H(1, (double)i/n + (double) 1/(2 * n)) * z[i];
+        }
+        n *= 2;
+        Ak = 1.0/n;
+        //cout << n << endl;
+    } while ((fabs(result_new[0] - result_old[0]) > accuracy || fabs(result_new[1] - result_old[1]) > accuracy || fabs(result_new[2] - result_old[2]) > accuracy)&& n < 128);
+
 
     cout << "MECHANIC QUADRATURE METHOD" << endl;
     cout << "x\t0\t1/2\t1" << endl;
-    cout << "u\t" << result[0] << "\t" << result[1] <<"\t" << result[2] <<endl;
+    cout << "u\t" << result_new[0] << "\t" << result_new[1] <<"\t" << result_new[2] <<endl;
 
 }

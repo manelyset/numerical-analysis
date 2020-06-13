@@ -18,3 +18,16 @@
 
 1591924137 c:\users\ерэџ\desktop\3ъ\vychi\sem6\4-fredholm\fredholm.h
 
+1592003067 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\4-fredholm\main.cpp
+	<iostream>
+	<cmath>
+	"fredholm.h"
+
+1591924137 c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\4-fredholm\fredholm.h
+
+1592047532 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\4-fredholm\fredholm.cpp
+	"fredholm.h"
+	<cmath>
+	<iostream>
+	<vector>
+
