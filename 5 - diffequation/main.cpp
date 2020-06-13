@@ -21,13 +21,13 @@ double f (double x) {
 
 int main()
 {
-    double* y10 = tridiagonal_matrix(p, q, r, f, 10, -1, 1);
+    double* u = tridiagonal_matrix(p, q, r, f, 10, -1, 1);
     cout << "RESULT:" << endl;
     double h = 0.2;
     double x = -1;
-    cout << "x\t    y10\t" << endl;
+    cout << "x\t    u(x)\t" << endl;
     for (int i = 0; i < 11; i++) {
-        cout << x << "\t" << y10[i] << endl;
+        cout << x << "\t" << u[i] << endl;
         x += h;
     }
     return 0;

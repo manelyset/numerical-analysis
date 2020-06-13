@@ -49,13 +49,14 @@ void scalar_product_method (double matrix[3][3]) {
     double y_new[3] = {1, 1, 1};
     double value_old, value_new = 1;
     int iterations_number = 0;
-    normalize(y_old);
+    //normalize(y_old);
+    normalize(y_new);
     do{
         value_old = value_new;
         copy_vector(y_old, y_new);
         multiply_vector_by_matrix(matrix, y_new);
-        normalize(y_new);
         value_new = scalar_product(y_old, y_new) / scalar_product(y_old, y_old);
+        normalize(y_new);
         iterations_number++;
     }
     while (fabs(value_new - value_old) > accuracy);

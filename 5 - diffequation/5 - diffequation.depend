@@ -23,3 +23,15 @@
 	<cmath>
 	<iostream>
 
+1592001361 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\5 - diffequation\main.cpp
+	<iostream>
+	"tridiag_matrix_method.h"
+	<cmath>
+
+1591973265 c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\5 - diffequation\tridiag_matrix_method.h
+
+1591974002 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\5 - diffequation\tridiag_matrix_method.cpp
+	"tridiag_matrix_method.h"
+	<cmath>
+	<iostream>
+

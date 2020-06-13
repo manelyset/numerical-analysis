@@ -24,9 +24,9 @@ void explicit_method (int n, int m, double (*f)(double, double), double T, doubl
     for (int i = 0; i <= n; i++) {
         cout << i * h << "\t";
     }
-    cout << endl;
+    cout << endl << "---------------------------------------------------------------------------------"<< endl;
     for (int k = 0; k <= m; k++) {
-        cout << k * tau << "\t";
+        cout << k * tau << "\t|\t";
         for (int i = 0; i <= n; i++)
             cout << u[i][k] << "\t";
         cout << endl;
@@ -67,9 +67,9 @@ void implicit_method (int n, int m, double (*f)(double, double), double T, doubl
     for (int i = 0; i <= n; i++) {
         cout << i * h << "\t";
     }
-    cout << endl;
+    cout << endl << "---------------------------------------------------------------------------------"<< endl;
     for (int k = 0; k <= m; k++) {
-        cout << k * tau << "\t";
+        cout << k * tau << "\t|\t";
         for (int i = 0; i <= n; i++)
             cout << u[i][k] << "\t";
         cout << endl;

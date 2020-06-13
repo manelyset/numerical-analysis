@@ -37,3 +37,22 @@
 1584358498 source:c:\users\ерэџ\desktop\3ъ\vychi\1,2-slau\precise.cpp
 	<iostream>
 
+1584367190 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\1,2-slau\iterations.cpp
+	<iostream>
+	<cmath>
+	"precise.h"
+
+1584358498 c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\1,2-slau\precise.h
+	<iostream>
+
+1584398051 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\1,2-slau\main.cpp
+	<iostream>
+	"precise.h"
+	"iterations.h"
+
+1584367223 c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\1,2-slau\iterations.h
+	<iostream>
+
+1584358498 source:c:\users\ерэџ\desktop\3ъ\vychi\sem6\numerical-analysis\1,2-slau\precise.cpp
+	<iostream>
+
