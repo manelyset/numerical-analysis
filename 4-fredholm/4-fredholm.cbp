@@ -35,6 +35,8 @@
 		<Unit filename="fredholm.cpp" />
 		<Unit filename="fredholm.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="slau_solving.cpp" />
+		<Unit filename="slau_solving.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
